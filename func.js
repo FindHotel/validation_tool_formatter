@@ -36,6 +36,17 @@ function draw_images_list(l, dest) {
     dest.appendChild(list);
 }
 
+function msToTime(s) {
+  var ms = s % 1000;
+  s = (s - ms) / 1000;
+  var secs = s % 60;
+  s = (s - secs) / 60;
+  var mins = s % 60;
+  var hrs = (s - mins) / 60;
+
+  return hrs + ':' + mins + ':' + secs + '.' + ms;
+}
+
 function draw_images(l, nfh_dest, mkp_dest) {
     draw_images_list(l.nfh, nfh_dest);
     draw_images_list(l.mkp, mkp_dest);
